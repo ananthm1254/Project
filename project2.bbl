@@ -1,0 +1,166 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{57060}{article}{}
+      \name{author}{2}{}{%
+        {{hash=e92179280000b6febd237291c4a63328}{%
+           family={{Ercegovac}},
+           familyi={E\bibinitperiod},
+           given={M.\bibnamedelimi D.},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=c0480f5b95b6b19160e4f956d3a42ca1}{%
+           family={{Lang}},
+           familyi={L\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{16f4bc05d4fda419f3738342573eb1da}
+      \strng{fullhash}{16f4bc05d4fda419f3738342573eb1da}
+      \strng{bibnamehash}{16f4bc05d4fda419f3738342573eb1da}
+      \strng{authorbibnamehash}{16f4bc05d4fda419f3738342573eb1da}
+      \strng{authornamehash}{16f4bc05d4fda419f3738342573eb1da}
+      \strng{authorfullhash}{16f4bc05d4fda419f3738342573eb1da}
+      \field{extraname}{1}
+      \field{sortinit}{E}
+      \field{sortinithash}{c554bd1a0b76ea92b9f105fe36d9c7b0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Computers}
+      \field{number}{9}
+      \field{title}{Simple radix-4 division with operands scaling}
+      \field{volume}{39}
+      \field{year}{1990}
+      \field{pages}{1204\bibrangedash 1208}
+      \range{pages}{5}
+    \endentry
+    \entry{10.5555/561933}{book}{}
+      \name{author}{2}{}{%
+        {{hash=151b80e71dca3caeb45f5efb3f5c1b09}{%
+           family={Ercegovac},
+           familyi={E\bibinitperiod},
+           given={MiloTs\bibnamedelima Dragutin},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=026e148177d7cdef25315cda84e7e89f}{%
+           family={Lang},
+           familyi={L\bibinitperiod},
+           given={Tomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {USA}%
+      }
+      \list{publisher}{1}{%
+        {Kluwer Academic Publishers}%
+      }
+      \strng{namehash}{a4945b8c56b89880951702a228eb43c2}
+      \strng{fullhash}{a4945b8c56b89880951702a228eb43c2}
+      \strng{bibnamehash}{a4945b8c56b89880951702a228eb43c2}
+      \strng{authorbibnamehash}{a4945b8c56b89880951702a228eb43c2}
+      \strng{authornamehash}{a4945b8c56b89880951702a228eb43c2}
+      \strng{authorfullhash}{a4945b8c56b89880951702a228eb43c2}
+      \field{extraname}{2}
+      \field{sortinit}{E}
+      \field{sortinithash}{c554bd1a0b76ea92b9f105fe36d9c7b0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0792394380}
+      \field{title}{Division and Square Root: Digit-Recurrence Algorithms and Implementations}
+      \field{year}{1994}
+    \endentry
+    \entry{72811}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=2df44d178571cad600263f618590ca11}{%
+           family={{Fandrianto}},
+           familyi={F\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{2df44d178571cad600263f618590ca11}
+      \strng{fullhash}{2df44d178571cad600263f618590ca11}
+      \strng{bibnamehash}{2df44d178571cad600263f618590ca11}
+      \strng{authorbibnamehash}{2df44d178571cad600263f618590ca11}
+      \strng{authornamehash}{2df44d178571cad600263f618590ca11}
+      \strng{authorfullhash}{2df44d178571cad600263f618590ca11}
+      \field{sortinit}{F}
+      \field{sortinithash}{fb0c0faa89eb6abae8213bf60e6799ea}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of 9th Symposium on Computer Arithmetic}
+      \field{title}{Algorithm for high speed shared radix 8 division and radix 8 square root}
+      \field{year}{1989}
+      \field{pages}{68\bibrangedash 75}
+      \range{pages}{8}
+    \endentry
+    \entry{1000}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c59b0fb22fe8b43f49307a5030395404}{%
+           family={Oberman},
+           familyi={O\bibinitperiod},
+           given={Stuart\bibnamedelima F.},
+           giveni={S\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=30a552c603bdd1a4130d54d00c0c1efd}{%
+           family={Flynn},
+           familyi={F\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Technical Report: CSL-TR-95-675}%
+      }
+      \strng{namehash}{4a301d0f2304c16f9ea59f9ad66c45f5}
+      \strng{fullhash}{4a301d0f2304c16f9ea59f9ad66c45f5}
+      \strng{bibnamehash}{4a301d0f2304c16f9ea59f9ad66c45f5}
+      \strng{authorbibnamehash}{4a301d0f2304c16f9ea59f9ad66c45f5}
+      \strng{authornamehash}{4a301d0f2304c16f9ea59f9ad66c45f5}
+      \strng{authorfullhash}{4a301d0f2304c16f9ea59f9ad66c45f5}
+      \field{sortinit}{O}
+      \field{sortinithash}{ff8d4eeb5101e3cf3809959b3592d942}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{ANANALYSIS OF DIVISION ALGORITHMS AND IMPLEMENTATIONS}
+      \field{year}{July1995}
+    \endentry
+    \entry{10254}{book}{}
+      \name{author}{2}{}{%
+        {{hash=01be7b793768ff70298e176da7042353}{%
+           family={S.Waser},
+           familyi={S\bibinitperiod}}}%
+        {{hash=dc3ed86a5fb73023ccc34bbc26775dd4}{%
+           family={M.Flynn},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{0a0c7d5065b392f8cb1ac04d21acfa78}
+      \strng{fullhash}{0a0c7d5065b392f8cb1ac04d21acfa78}
+      \strng{bibnamehash}{0a0c7d5065b392f8cb1ac04d21acfa78}
+      \strng{authorbibnamehash}{0a0c7d5065b392f8cb1ac04d21acfa78}
+      \strng{authornamehash}{0a0c7d5065b392f8cb1ac04d21acfa78}
+      \strng{authorfullhash}{0a0c7d5065b392f8cb1ac04d21acfa78}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Introduction to Arithmetic for Digital Systems Designers}
+      \field{year}{1982}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -1,0 +1,19 @@
+[0] Config.pm:304> INFO - This is Biber 2.14 (beta)
+[0] Config.pm:307> INFO - Logfile is 'project2.blg'
+[70] biber:322> INFO - === Wed Aug 12, 2020, 10:55:03
+[82] Biber.pm:415> INFO - Reading 'project2.bcf'
+[143] Biber.pm:943> INFO - Found 5 citekeys in bib section 0
+[157] Biber.pm:4256> INFO - Processing section 0
+[157] Utils.pm:75> INFO - Globbing data source 'acm_561933.bib'
+[157] Utils.pm:91> INFO - Globbed data source 'acm_561933.bib' to acm_561933.bib
+[166] Biber.pm:4455> INFO - Looking for bibtex format file 'acm_561933.bib' for section 0
+[167] bibtex.pm:1653> INFO - LaTeX decoding ...
+[174] bibtex.pm:1471> INFO - Found BibTeX data source 'acm_561933.bib'
+[239] Utils.pm:293> WARN - year field 'July1995' in entry '1000' is not an integer - this will probably not sort properly.
+[255] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[256] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[256] Biber.pm:4084> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[256] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
+[262] bbl.pm:652> INFO - Writing 'project2.bbl' with encoding 'UTF-8'
+[265] bbl.pm:755> INFO - Output to project2.bbl
+[265] Biber.pm:128> INFO - WARNINGS: 1

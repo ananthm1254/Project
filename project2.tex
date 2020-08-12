@@ -1,0 +1,137 @@
+\documentclass[10pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usetheme{Warsaw}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{xparse}
+\usepackage{mathtools}
+\usetikzlibrary{matrix,shapes,arrows,positioning,chains}
+\title{Comparisons of Different Binary Division Algorithms}
+\author{ananth7121999 }
+\date{August 2020}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{acm_561933.bib}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\begin{document}
+
+\begin{frame}{}
+\maketitle
+\end{frame}
+
+\begin{frame}{Introduction}
+This presentation discusses different serial multiplication algorithms and compares them on different parameters such as delay, area and power consumption. The algorithms discussed are:
+\begin{itemize}
+\item Digit Recurrence Algorithm
+\begin{itemize}
+\item Restoring Algorithms
+\item Non-Restoring Algorithms
+\end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{SRT Division}
+Digit recurrence algorithms use subtractive methods to calculate  quotients  one  digit  per  iteration.  SRT  division or Non-Restoring division  is  the name of the most common form of digit recurrence division algorithm.
+The following recurrence is used in every iteration of the SRT algorithm:
+\begin{minipage}[t]{0.5\textwidth}
+\begin{equation}
+rP_0 = dividend
+\end{equation}
+\begin{equation}
+P_{j+1} = rP_{j} - q_{j+1}divisor
+\end{equation}
+\end{minipage}%
+\begin{minipage}[t]{0.5\textwidth}
+\begin{equation}
+q_{j+1} = SEL(rP_{j}, divisor)
+\end{equation}
+\begin{equation}
+q = \sum_{j = 1}^{k} q_{j}r^{-j}
+\end{equation}
+\end{minipage}
+\begin{equation}
+remainder = 
+\begin{cases} 
+      P_n &  P_n \geq 0 \\
+      P_n + divisor & P_n<0 \\
+\end{cases}
+\end{equation}
+\end{frame}
+
+\begin{frame}
+Implementing SRT divisor requires the following steps:
+\begin{itemize}
+\item \textbf{Choice of Radix} : Increasing the radix by a power of $f$ , $r$ to $r^f$, reduces the number of iterations by a factor of $f$. Thus reducing latency, but increasing complexity.
+\item \textbf{Choice of Quotient Digit Set} : The  simplest  case  is  where,  for  radix  r,  there  are exactly  r  allowed  values  of  the  quotient.  However,  to  increase the performance of the algorithm, we use a redundant digit  set.  Such  a  digit  set  can  be  composed  of  symmetric signed-digit   consecutive   integers. But as the size of quotient digit set increases, the complexity and latency also increases.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\begin{itemize}
+\item \textbf{Residual Representation} : 
+\begin{itemize}
+\item Conventional  2's  complement  representation  or \textit{nonredundant form}
+\item Carry-save  2's  complement  representation or a  \textit{redundant  form}.
+\end{itemize}
+\item \textbf{Quotient-Digit Selection Function}
+The following diagram represents Radix-4 quotient digit selection function.
+\begin{figure}
+\includegraphics[width=5cm]{plot.png}
+\end{figure}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Increasing Performance of SRT Divider}
+\begin{itemize}
+\item \textbf{Simple Staging}: In order to retire more bits of quotient in every cycle, a simple low-radix divider can be replicated many times to form a higher radix divider. This helps to decrease latecny, but increases area.
+\item \textbf{Overlapping Excecution}: It is possible to overlap or pipeline the components of the division step in order to reduce the cycle time of the division step.
+\item \textbf{Overlapping Quotient Digit Selection}: To avoid the increase in cycle time that results from staging radix-r segments together in forming higher radix dividers, some additional quotient computation can proceed in parallel.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Functional Iteration}
+\begin{itemize}
+\item \textbf{Newton-Raphson Method}: 
+Division can be written as the product of the dividend andthe reciprocal of the divisor. Here the Newton-Raphson Method is used to compute the reciprocal of the divisor and then the value is multiplied by the dividend using any binary mulitplier.
+\item \textbf{Goldschmidt’s algorithm}:
+Goldschmidt division (after Robert Elliott Goldschmidt) uses an iterative process of repeatedly multiplying both the dividend and divisor by a common factor $F_i$, chosen such that the divisor converges to 1. This causes the dividend to converge to the sought quotient $Q$.
+\[\frac{N_{i+1}}{D_{i+1}} = \frac{N_{i}}{D_{i}}. \frac{F_{i+1}}{F_{i+1}},Q = N_k \]
+\end{itemize}
+\end{frame}
+\begin{frame}{Disadvantages of Iterative Method}
+\begin{itemize}
+\item The  main  disadvantage  of  using  functional  iteration  for division  is  the  difficulty  in  obtaining  a  correctly  rounded result. With subtractive implementations, both a result and a  remainder  are  generated,  making  rounding  a  straight forward procedure. 
+\item The series expansion iteration, which converges  directly  to  the  quotient,  only  produces  a  result which is close to the correctly rounded quotient, and it doesnot  produce  a  remainder.  
+\item The  Newton-Raphson  algorithm has  the  additional  disadvantage  that  it  converges  to  the reciprocal,  not  the  quotient.  Even  if  the  reciprocal  can  be correctly  rounded,  it  does  not  guarantee  the  quotient  to  be correctly rounded.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Comparison Table}
+\begin{table}[h!]
+\fontsize{5.5}{10}\selectfont
+\centering
+ \begin{tabular}{|p{2cm}|p{2cm}|p{3cm}|p{2cm}|}
+ \hline
+ Algorithm & Interation Time & Latency (Cycles) & Approximate Area ($\mu W$) \\
+ \hline\hline
+ SRT & Q-sel+ (multiple form+ subtraction) & $\ceil{\frac{n}{r}}$ + scale & Qsel table + CSA\\ %[2em]
+ \hline
+ Newton-Raphson & 2 serial multiplication & $2(\ceil{\log_2{\frac{n}{i}}} + 1)t_{mul} + 1$ & 1 multipier + table + control \\
+ \hline
+ Goldshmidt Method & 1 multiplication & $(\ceil{\log_2{\frac{n}{i}}} + 1)t_{mul} + 2, t_{mul} > 1$ $2\ceil{\log_2{\frac{n}{i}}} + 3, t_{mul} = 1$ & 1 multipier + table + control \\[1.5em]
+ \hline
+Acccurate quotient approx & 1 multiplication & $(\ceil{\frac{n}{i}} + 1)t_{mul}$ & 3 multipiers + table + control \\%[2em]
+ \hline
+\end{tabular}
+\caption{Comparison of division agorithms}
+\label{table:2}
+\end{table}
+\end{frame}
+
+\begin{frame}{Conclusion}
+Among all the division methods Radix-4 SRT or Non-restoring division is the best option for processors with area constraints and also provides reasonable amount of performance.\newline \newline For fast computation where remainder value is not necessary the functional interation methods like Newton-Raphson and Goldshmidt methods can be used.
+\newline \newline Different High Radix algorithms also provide considerable boost in speed, but are of high complexity and requires lager area.
+\end{frame}
+
+\begin{frame}{References}
+\tiny
+    \printbibliography   
+\end{frame}
+\end{document}
